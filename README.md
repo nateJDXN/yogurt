@@ -1,6 +1,6 @@
 # Yogurt - A Granola Notes Exporter
 
-A Python script that exports your [Granola](https://granola.ai) AI-enhanced meeting summaries to organized Markdown files with full metadata. Designed to run nightly via macOS `launchd`.
+A Python script that exports your [Granola](https://granola.ai) AI-enhanced meeting summaries to organized Markdown files with full metadata. Runs nightly via macOS `launchd`.
 
 ## How It Works
 
@@ -18,7 +18,7 @@ Authentication is handled automatically using the tokens Granola stores locally 
 ## Example Output Structure
 
 ```
-<your-chosen-directory>/
+granola-notes/
 ├── 2026/
 │   ├── 01/
 │   │   ├── 2026-01-07-monthly-board-meeting.md
@@ -46,12 +46,6 @@ Each exported file has a markdown header followed by the AI-generated summary:
 - ...
 ```
 
-Documents without an AI summary fall back to raw user notes and include a notice:
-
-```markdown
-> **Note:** No Granola summary found. Showing raw user notes.
-```
-
 ## Setup
 
 ### Install
@@ -63,11 +57,6 @@ git clone https://github.com/nateJDXN/yogurt.git
 cd yogurt
 ./install.sh
 ```
-
-The installer will walk you through setup:
-
-1. **Output directory** — You'll be asked where to save your exported notes. Press Enter to use the default (`~/Documents/granola-notes`), or enter a custom path. If the directory doesn't exist, you'll be offered the option to create it.
-2. **Initial export** — The installer detects your existing Granola notes and shows an estimated export size. You can choose to export everything immediately or do it later.
 
 Once complete, a `launchd` agent is registered to run the export automatically at 2:00 AM daily. If your Mac is asleep at that time, it runs when the machine next wakes up. If the Granola API is unreachable (no internet, server down), the script retries every hour for up to 24 hours.
 
