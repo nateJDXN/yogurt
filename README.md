@@ -1,6 +1,6 @@
 # Yogurt - A Granola Notes Exporter
 
-A Python script that exports your [Granola](https://granola.ai) AI-enhanced meeting summaries to organized Markdown files with full metadata. Runs nightly via macOS `launchd`.
+Yogurt is a Python script that exports your [Granola](https://granola.ai) AI-enhanced meeting summaries to organized Markdown files with full metadata. Designed to run nightly via macOS `launchd`.
 
 ## How It Works
 
