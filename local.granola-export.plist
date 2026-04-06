@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Label: unique identifier for this job -->
+    <key>Label</key>
+    <string>local.granola-export</string>
+
+    <!-- The script to run -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>__PYTHON3__</string>
+        <string>__HOME__/scripts/granola-export.py</string>
+        <string>--output</string>
+        <string>__OUTPUT_DIR__</string>
+    </array>
+
+    <!-- Run daily at 2:00 AM -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>2</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- Log stdout and stderr -->
+    <key>StandardOutPath</key>
+    <string>__HOME__/Library/Logs/granola-export.log</string>
+    <key>StandardErrorPath</key>
+    <string>__HOME__/Library/Logs/granola-export.error.log</string>
+
+    <!-- Run missed jobs when waking from sleep -->
+    <key>MissedTaskPolicy</key>
+    <string>Aggressive</string>
+</dict>
+</plist>

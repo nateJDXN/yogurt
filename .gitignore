@@ -1,0 +1,27 @@
+# Claude Code
+.claude
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Environment
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Virtual environments
+venv/
+.venv/
+
+# Logs
+*.log
